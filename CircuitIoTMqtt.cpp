@@ -8,7 +8,10 @@
 CircuitIoTMqtt::CircuitIoTMqtt(WiFiClientSecure& wifiClient) : PubSubClient() {
   
   #ifdef ESP8266 
-         wifiClient.setFingerprint(mqttCertFingerprint);
+         //wifiClient.setFingerprint(mqttCertFingerprint);
+        // BearSSL::X509List *serverCertList = new BearSSL::X509List(ROOTCERT);
+         //wifiClient.setTrustAnchors(serverCertList);
+         wifiClient.setInsecure();
     #endif 
     #ifdef ESP32   
          wifiClient.setCACert(ROOTCERT);

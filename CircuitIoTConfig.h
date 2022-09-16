@@ -37,6 +37,8 @@
 
 //static const char *mqttCertFingerprint PROGMEM = "81 EA A3 BB E9 B9 CF 1D 20 5B A9 05 D1 56 4A 3B B7 78 9A EA";
 
-static const char *mqttCertFingerprint PROGMEM = "CA BD 2A 79 A1 07 6A 31 F2 1D 25 36 35 CB 03 9D 43 29 A5 E8";
+//static const char *mqttCertFingerprint PROGMEM = "CA BD 2A 79 A1 07 6A 31 F2 1D 25 36 35 CB 03 9D 43 29 A5 E8";
+
+static const char *mqttCertFingerprint PROGMEM = "72 11 4D 3F 1B F9 A0 16 41 05 B5 51 12 C7 B7 81 37 65 07 6A";
 
 static const char *subscribeCategories[] = {"switch", "led_strip"};
