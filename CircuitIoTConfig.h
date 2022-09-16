@@ -35,6 +35,8 @@
 "emyPxgcYxn/eR44/KJ4EBs+lVDR3veyJm+kXQ99b21/+jh5Xos1AnX5iItreGCc=\n" \
 "-----END CERTIFICATE-----\n" 
 
-static const char *mqttCertFingerprint PROGMEM = "81 EA A3 BB E9 B9 CF 1D 20 5B A9 05 D1 56 4A 3B B7 78 9A EA";
+//static const char *mqttCertFingerprint PROGMEM = "81 EA A3 BB E9 B9 CF 1D 20 5B A9 05 D1 56 4A 3B B7 78 9A EA";
+
+static const char *mqttCertFingerprint PROGMEM = "CA BD 2A 79 A1 07 6A 31 F2 1D 25 36 35 CB 03 9D 43 29 A5 E8";
 
 static const char *subscribeCategories[] = {"switch", "led_strip"};
