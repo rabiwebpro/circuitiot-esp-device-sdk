@@ -12,6 +12,7 @@ CircuitIoTMqtt::CircuitIoTMqtt(WiFiClientSecure& wifiClient) : PubSubClient() {
         // BearSSL::X509List *serverCertList = new BearSSL::X509List(ROOTCERT);
          //wifiClient.setTrustAnchors(serverCertList);
          wifiClient.setInsecure();
+         //wifiClient.setCACert((const uint8_t*)ROOTCERT, sizeof(ROOTCERT) - 1);
     #endif 
     #ifdef ESP32   
          wifiClient.setCACert(ROOTCERT);
