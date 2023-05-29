@@ -71,6 +71,20 @@ void CircuitIoTDevice::onCallback(char* topic, byte* payload, unsigned int lengt
   }
   val[length] = NULL;
 
+  if (strcmp(val, "RES") == 0) {
+    Serial.println("Resetting device...");
+    for (int i = 0; i < 96; ++i) {
+      EEPROM.write(i, 0);
+    }
+    EEPROM.commit();
+    delay(100);
+    ESP.reset();
+  }
+  if (strcmp(val, "RST") == 0) {
+    Serial.println("Restarting device...");
+    ESP.reset();
+  }
+
   
   String property = String(topic).substring(_rootTopic.length() + 1);
 
