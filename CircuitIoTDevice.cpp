@@ -2,12 +2,13 @@
 
 CircuitIoTDevice::CircuitIoTDevice(WiFiClientSecure& wifiClient, char token[]) : CircuitIoTMqtt(wifiClient), CircuitIoTUdp() {
   this->_token = token;
+  parseToken();
   PubSubClient::setCallback([this] (char* topic, byte* payload, unsigned int length) { this->onCallback(topic, payload, length); });
   CircuitIoTUdp::setUdpCallback([this] (char* topic, byte* payload, unsigned int length) { this->onCallback(topic, payload, length); });
  };
 
  void CircuitIoTDevice::setup() {
-  parseToken();
+  //parseToken();
   delay(1000);
   this->_subscriptionRoot = String("device/" + _deviceId).c_str();
   this->_publishRoot = String("client/" + _deviceId).c_str();
